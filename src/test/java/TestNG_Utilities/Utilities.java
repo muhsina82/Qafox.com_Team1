@@ -15,10 +15,7 @@ import org.openqa.selenium.io.FileHandler;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
-
-
-import Registration_2.NewsletterSubscription;
-
+import Registration_Muhsina.NewsletterSubscription;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
