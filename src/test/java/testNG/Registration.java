@@ -3,7 +3,7 @@ package testNG;
 
 import org.testng.annotations.Test;
 
-import Registration_2.NewsletterSubscription;
+import Registration_Muhsina.NewsletterSubscription;
 import TestNG_Utilities.Utilities;
 
 
