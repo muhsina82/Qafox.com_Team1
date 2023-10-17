@@ -5,18 +5,17 @@ import java.io.IOException;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import Commons.commons;
 import TestNG_Utilities.Utilities;
 
 
-public class listerner_Class extends commons implements ITestListener {
+public class listerner_Class extends Utilities implements ITestListener {
 	
 	
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
 		
-		this.driver= ((commons)result.getInstance()).driver;
+		this.driver= ((Utilities)result.getInstance()).driver;
 		
 		try {
 			Screenshot("Passed");
@@ -31,7 +30,7 @@ public class listerner_Class extends commons implements ITestListener {
 	@Override
 	public void onTestFailure(ITestResult result) {
 		
-		this.driver= ((commons)result.getInstance()).driver;
+		this.driver= ((Utilities)result.getInstance()).driver;
 		try {
 			Screenshot("Failed");
 		} catch (IOException e) {
