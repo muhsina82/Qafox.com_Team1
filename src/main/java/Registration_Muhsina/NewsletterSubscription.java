@@ -11,6 +11,8 @@ import M_commons.Main_Commons;
 
 
 
+
+
 public class NewsletterSubscription extends Main_Commons {
 	
 	
@@ -23,13 +25,13 @@ public class NewsletterSubscription extends Main_Commons {
 
 	public void visibleNewsLetterBtn() {
 		
-		ExplicitWait(Newsletter, driver);
-		ScrollInToView(driver, Newsletter);
+		ExplicitWait(Newsletter);
+		ScrollInToView(Newsletter);
 
 
 		
-		ExplicitWait(Newsletter, driver);
-		drawBorder(Newsletter,driver);
+		ExplicitWait(Newsletter);
+		drawBorder(Newsletter);
 		
 	}
 	
@@ -38,10 +40,9 @@ public class NewsletterSubscription extends Main_Commons {
 
 	public void ClickButton() {
 		
-		ExplicitWait(Newsletter, driver);
+		ExplicitWait(Newsletter);
 		YesButton.click();
-		
-		ExplicitWait(Newsletter, driver);
+
 		NoButton.click();
 		
 		
