@@ -1,67 +1,18 @@
-package Commons;
+package M_commons;
 
-import java.io.File;
-import java.io.IOException;
 import java.time.Duration;
-import java.util.Date;
 import java.util.Set;
 
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class commons  {
-	
+public class Main_Commons {
 
 	public WebDriver driver;
-	public String ud=System.getProperty("user.dir");
-	 
-	  public void IBrowsers(String NameOfBrowser, String url ) {
-			String ud=System.getProperty("user.dir");
-			if (NameOfBrowser.equalsIgnoreCase("Chrome")) {
-				
-			System.setProperty("webdriver.chrome.driver", ud+"\\Drivers\\chromedriver.exe");
-			driver = new ChromeDriver();
-			driver.get(url);
-			driver.manage().window().maximize();
-				
-			}
-			
-			else if (NameOfBrowser.equalsIgnoreCase("Edge")) {
-			
-			System.setProperty("webdriver.edge.driver",ud +"\\Drivers\\msedgedriver.exe");
-			driver= new EdgeDriver();
-			driver.get(url);
-			driver.manage().window().maximize();
-			
-			}
-
-
-	}
-	  
-	  public void Screenshot(String Folder) throws IOException {
-			
-			Date object= new Date();
-			System.out.println(object);
-			
-			String DFile= object.toString().replace(" ", "_").replace(":", "_");
-			System.out.println(DFile);
-			
-			File HomePageSS =((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-			
-			FileHandler.copy(HomePageSS,new File("D:\\QA\\Eclipse\\Qafox.com_Team1\\Screenshots\\"+Folder+"\\" +DFile+" Home.jpg"));
-			
-			
-	}
-	
 	
 	public void SwitchToOpenWindow (String Parent, WebDriver driver) {
 		Set<String> wins= driver.getWindowHandles();
@@ -103,10 +54,10 @@ public class commons  {
 
 	}
 		//Scroll bottom of the page
-		public static void ScrollPageDown(WebDriver driver) {
+		public static void ScrollPageDown(WebElement element, WebDriver driver) {
 			
 			JavascriptExecutor jsExecutor = (JavascriptExecutor)driver;
-			jsExecutor.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+			jsExecutor.executeScript("window.scrollTo(0,document.body.scrollHeight)", element);
 			
 			
 		}
@@ -152,7 +103,7 @@ public class commons  {
 	}
 	        public static void ExplicitWait(WebElement element, WebDriver driver) {
 	        	 
-	        WebDriverWait ExWait= new WebDriverWait(driver,Duration.ofSeconds(10));
+	        WebDriverWait ExWait= new WebDriverWait(driver,Duration.ofSeconds(30));
 	 		ExWait.until(ExpectedConditions.elementToBeClickable(element));
 	         
 	         }
