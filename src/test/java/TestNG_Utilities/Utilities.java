@@ -50,7 +50,7 @@ public class Utilities extends Test_Commons{
   public void afterClass() {
 	  
 	  
-  //driver.close();
+  driver.close();
   
   
   }

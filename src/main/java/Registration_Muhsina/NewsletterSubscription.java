@@ -8,11 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 import M_commons.Main_Commons;
 
 
-
-
-
-
-
 public class NewsletterSubscription extends Main_Commons {
 	
 	
